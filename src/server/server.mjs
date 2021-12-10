@@ -1,13 +1,13 @@
 
-// https://nanojsx.github.io/
 
 import express from "express";
-import test from './routes/test.mjs';
 
-const app = express()
+import routes from './routes/routes.mjs';
+
+const app = express();
 const port = 3000;
 
-app.use(express.static('dist'))
+app.use(express.static('dist'));
 
 app.get('/', (req, res) => {
   res.send(
@@ -15,12 +15,8 @@ app.get('/', (req, res) => {
   )
 })
 
-//var testRoutes = require('./routes/tests');
-// Import my test routes into the path '/test'
-//app.use('/tests', testRoutes);
-
 //Routes
-app.use(test); 
+app.use(routes); 
 
 const server = app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

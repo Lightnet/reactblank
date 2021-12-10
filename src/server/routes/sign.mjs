@@ -10,8 +10,11 @@ const router = express.Router();
 //});
 
 // define the name page route
-router.get('/test', function (req, res) {
-  res.send('test page')
+router.get('/sign', function (req, res) {
+  res.send(`
+  <html lang="en">
+  page
+  </html>`)
 })
 
 export default router;
